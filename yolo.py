@@ -139,7 +139,7 @@ def enhance_foggy_image(image_path, show_result=True, save_path=None):
 
 def detect_vehicles(enhanced_img):
     print("\n🔍 Loading YOLOv8 model for vehicle detection...")
-    model = YOLO("yolov8l.pt") 
+    model = YOLO("yolov8n.pt") 
 
     print("Running detection...")
     results = model.predict(source=enhanced_img, imgsz=640, conf=0.40, verbose=False)
@@ -172,3 +172,4 @@ if __name__ == "__main__":
 
     cv2.imwrite(detected_path, cv2.cvtColor(detection_result, cv2.COLOR_RGB2BGR))
     print(f"\n✅ Results saved as '{enhanced_path}' and '{detected_path}'")
+
